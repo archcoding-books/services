@@ -18,7 +18,7 @@ func main() {
 
 	r := gin.Default()
 
-	r.GET("/sync", func(c *gin.Context) {
+	r.POST("/sync", func(c *gin.Context) {
 		go func() {
 			cmd := exec.Command("/archcoding_books/sync.sh")
 			out, _ := cmd.CombinedOutput()
